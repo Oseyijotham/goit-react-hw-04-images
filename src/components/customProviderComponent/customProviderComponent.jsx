@@ -171,6 +171,7 @@ export const UserProvider = ({ children }) => {
         handleButtonPress,
         handleImageClick,
         handleClose,
+        setInitalSearchTerm,
       }}
     >
       {children}
