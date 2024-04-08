@@ -3,6 +3,9 @@ import { startSrch } from '../API/api';
 import { loadSrch } from '../API/api';
 import Notiflix from 'notiflix';
 import { useMemo } from 'react';
+import { useRef } from 'react';
+import { useEffect } from 'react';
+
 
 const UserContext = createContext();
 
@@ -22,6 +25,11 @@ export const UserProvider = ({ children }) => {
   const [initalSearchTerm, setInitalSearchTerm] = useState(
     'Artificial Intelligence'
   );
+
+
+  const myRef = useRef();
+
+  useEffect(() => myRef.current.focus(), []);
 
   const memoizedResponse = useMemo(
     () => startSrch(initalSearchTerm),
@@ -166,6 +174,7 @@ export const UserProvider = ({ children }) => {
         didUserSearch,
         fullImage,
         imageAlt,
+        myRef,
         initialApiCall,
         handleSubmit,
         handleButtonPress,

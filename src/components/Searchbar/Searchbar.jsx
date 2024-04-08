@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 export const SearchBar = () => {
-  const { handleSubmit } = useUser();
+  const { handleSubmit, myRef } = useUser();
 
   return (
     <header className={css.searchBar}>
@@ -13,7 +13,7 @@ export const SearchBar = () => {
           className={css.input}
           type="text"
           autoComplete="off"
-          autoFocus
+          ref={myRef}
           placeholder="Search images and photos"
         />
         <button type="submit" className={css.button}>
