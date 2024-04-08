@@ -26,10 +26,9 @@ export const UserProvider = ({ children }) => {
     'Artificial Intelligence'
   );
 
-
   const myRef = useRef();
 
-  useEffect(() => myRef.current.focus(), []);
+  useEffect(() => myRef.current.focus(), []); // I used  myRef to focus on the Search Input Box after mounting, see in the Searchbar component
 
   const memoizedResponse = useMemo(
     () => startSrch(initalSearchTerm),
